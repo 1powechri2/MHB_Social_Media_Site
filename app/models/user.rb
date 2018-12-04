@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :mhb_pics, presence: true
   validates :email, presence: true
   has_secure_password
+  has_many :messages
 end

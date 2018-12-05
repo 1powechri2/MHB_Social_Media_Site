@@ -7,7 +7,12 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of(:bio) }
   it { should validate_presence_of(:mhb_pics) }
   it { should validate_presence_of(:email) }
+
+  it { should validate_uniqueness_of(:username) }
+  it { should validate_uniqueness_of(:email) }
+
   it { should have_secure_password }
+
   it { should have_many(:messages) }
 end
 
@@ -25,6 +30,7 @@ describe 'A user' do
     expect(me.first_name).to eq(user[:first_name])
     expect(me.password).to eq(user[:password])
   end
+
   it 'can create many messages' do
     user = {first_name: 'Chris',
            last_name: 'Powell',

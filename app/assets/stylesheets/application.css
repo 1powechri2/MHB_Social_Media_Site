@@ -71,7 +71,7 @@ table {
 
 #header_color {
   background-color: #522B29;
-  opacity: 0.75 ;
+  opacity: 0.75;
   position: absolute;
   top: 0;
   left: 0;
@@ -102,6 +102,9 @@ table {
   font-family: 'Permanent Marker', cursive;
   color: #C2D3CD;
   font-size: 2vw;
+	background-color: transparent;
+	border: none;
+
 }
 
 #log_in {
@@ -109,4 +112,39 @@ table {
   font-family: 'Permanent Marker', cursive;
   color: #C2D3CD;
   font-size: 2vw;
+	background-color: transparent;
+	border: none;
+}
+
+#log_out {
+  grid-column: 8 / span 1;
+  font-family: 'Permanent Marker', cursive;
+  color: #C2D3CD;
+  font-size: 2vw;
+	background-color: transparent;
+	border: none;
+}
+
+#welcome {
+	grid-column: 1 / span 3;
+	font-family: 'Permanent Marker', cursive;
+  color: #C2D3CD;
+  font-size: 2vw;
+}
+
+#sign_up_modal {
+	display: flex;
+  justify-content: center;
+	position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+	background: rgba(255, 66, 56, 0.5);
+	text-align: center;
+}
+
+#sign_up_form {
+	padding-top: 200px;
 }

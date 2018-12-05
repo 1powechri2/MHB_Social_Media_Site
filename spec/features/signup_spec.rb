@@ -7,22 +7,20 @@ describe 'A user visits root' do
 
       click_on 'Sign Up'
 
-      within('#sign_up') do
+      within('#sign_up_form') do
         fill_in 'first_name', with: 'Chris'
         fill_in 'last_name', with: 'Powell'
         fill_in 'username', with: 'dudebooks'
         fill_in 'bio', with: 'I love literature'
-        fill_in 'mhb_pics', with: 'The Sound and the Fury'
         fill_in 'email', with: 'chris.ian.powell@hotmail.com'
         fill_in 'password', with: 'dandelionwars123'
       end
 
-      click_on 'Submit'
-
-      user = User.authenticate('dandelionwars123')
+      click_on 'Become A Bibliophile!'
 
       expect(current_path).to eq('/')
-      expect(page).to have_content('Chris Powell')
+      expect(page).to have_content('Welcome Chris Powell')
+      expect(page).to have_content('Log Out')
     end
   end
 end

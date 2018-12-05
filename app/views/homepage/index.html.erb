@@ -12,11 +12,36 @@
     <h1 id='header_mhb'>Mile High Bibliophiles<h1>
   </div>
   <div id='navbar'>
-    <p id='sign_up'>Sign Up</p>
-    <p id='log_in'>Log In</p>
+    <% if current_user %>
+       <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
+       <button id='log_out'>Log Out</button>
+    <% else %>
+      <button id='sign_up'>Sign Up</button>
+      <button id='log_in'>Log In</button>
+    <% end %>
   </div>
   <body>
+    <div id='sign_up_modal'>
+      <div id='sign_up_form'>
+        <%= form_tag('/users', method: 'post') do %>
+        <%= label_tag(:first_name, 'First Name') %><br>
+        <%= text_field_tag(:first_name) %><br>
+        <%= label_tag(:last_name, 'Last Name') %><br>
+        <%= text_field_tag(:last_name) %><br>
+        <%= label_tag(:username, 'Create A User Name') %><br>
+        <%= text_field_tag(:username) %><br>
+        <%= label_tag(:password, 'Create A Password') %><br>
+        <%= password_field_tag(:password) %><br>
+        <%= label_tag(:email, 'Your Email') %><br>
+        <%= email_field_tag(:email) %><br>
+        <%= label_tag(:bio, 'Bio') %><br>
+        <%= text_area_tag(:bio) %><br>
+        <%= submit_tag("Become A Bibliophile!") %>
+        <% end %>
+      </div>
+    </div>
   </body>
   <footer>
   </footer>
+  <%= javascript_include_tag 'root_page.js' %>
 </html>

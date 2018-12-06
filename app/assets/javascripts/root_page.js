@@ -10,3 +10,14 @@ $('#sign_up').click(() => {
 $('#log_in').click(() => {
   $('#log_in_modal').show();
 })
+
+$('#sign_up_close').css( 'cursor', 'pointer');
+$('#log_in_close').css( 'cursor', 'pointer');
+
+$('#sign_up_close').click(() => {
+  $('#sign_up_modal').hide();
+})
+
+$('#log_in_close').click(() => {
+  $('#log_in_modal').hide();
+})

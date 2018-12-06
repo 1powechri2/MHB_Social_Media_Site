@@ -70,7 +70,7 @@ table {
 }
 
 #header_color {
-  background-color: #522B29;
+  background-color: #2A3C24;
   opacity: 0.75;
   position: absolute;
   top: 0;
@@ -82,7 +82,7 @@ table {
 #header_mhb {
   font-family: 'Monoton', cursive;
   font-size: 6vw;
-  color: #C2D3CD;
+  color: #A1C349;
   position: absolute;
 }
 
@@ -94,13 +94,13 @@ table {
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 50px;
-  background-color: #495652;
+  background-color: #243010;
 }
 
 #sign_up {
   grid-column: 7 / span 1;
   font-family: 'Permanent Marker', cursive;
-  color: #C2D3CD;
+  color: #CAD593;
   font-size: 2vw;
 	background-color: transparent;
 	border: none;
@@ -110,7 +110,7 @@ table {
 #log_in {
   grid-column: 8 / span 1;
   font-family: 'Permanent Marker', cursive;
-  color: #C2D3CD;
+  color: #CAD593;
   font-size: 2vw;
 	background-color: transparent;
 	border: none;
@@ -119,7 +119,7 @@ table {
 #log_out {
   grid-column: 8 / span 1;
   font-family: 'Permanent Marker', cursive;
-  color: #C2D3CD;
+  color: #CAD593;
   font-size: 2vw;
 	text-decoration: none;
 }
@@ -127,7 +127,7 @@ table {
 #welcome {
 	grid-column: 1 / span 3;
 	font-family: 'Permanent Marker', cursive;
-  color: #C2D3CD;
+  color: #CAD593;
   font-size: 2vw;
 }
 
@@ -140,12 +140,30 @@ table {
   width: 100%;
   height: 100%;
   z-index: 0;
-	background: rgba(255, 66, 56, 0.5);
+	background: rgba(135, 163, 48, 0.2);
 	text-align: center;
 }
 
+#sign_up_message {
+	font-size: 150%;
+	margin-bottom: 10px;
+}
+
+#sign_up_close {
+	font-size: 200%;
+	margin-left: 90%;
+}
+
 #sign_up_form {
-	padding-top: 200px;
+	font-family: 'Libre Baskerville', serif;
+	background-color: rgba(248, 242, 0, 0.7);
+	width: 70%;
+	height: 75%;
+	margin-top: 100px;
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 10px;
+	border-color: #243010;
 }
 
 #log_in_modal {
@@ -157,10 +175,50 @@ table {
   width: 100%;
   height: 100%;
   z-index: 0;
-	background: rgba(255, 66, 56, 0.5);
+	background: rgba(135, 163, 48, 0.2);
 	text-align: center;
 }
 
+#log_in_message {
+	font-size: 150%;
+	margin-bottom: 10px;
+}
+
+#log_in_close {
+	font-size: 200%;
+	margin-left: 90%;
+}
+
 #log_in_form {
-	padding-top: 200px;
+	font-family: 'Libre Baskerville', serif;
+	background-color: rgba(248, 242, 0, 0.7);
+	width: 600px;
+	margin-top: 180px;
+	margin-bottom: 250px;
+	margin-left: 100px;
+	margin-right: 100px;
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 10px;
+	border-color: #243010;
+}
+
+#label {
+	font-size: 150%;
+}
+
+.field {
+	width: 50%;
+	padding: 1% 1%;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 80%;
+}
+
+.submit_btn {
+	width: 53%;
+	margin-top: 10px;
+	padding: 16px 32px;
+	border-radius: 50px;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 80%;
 }

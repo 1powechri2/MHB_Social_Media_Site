@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mile High Bibliophiles</title>
-    <link href="https://fonts.googleapis.com/css?family=Monoton|Sedgwick+Ave" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Libre+Baskerville|Permanent+Marker" rel="stylesheet">
   </head>
   <div id='header'>
     <div id='header_color'>
     </div>
-    <h1 id='header_mhb'>Mile High Bibliophiles<h1>
+    <h1 id='header_mhb'>Mile High Bibliophiles</h1>
   </div>
   <div id='navbar'>
     <% if current_user %>
@@ -23,31 +23,35 @@
   <body>
     <div id='sign_up_modal'>
       <div id='sign_up_form'>
+        <p id='sign_up_close'>&times;</p>
+        <p id='sign_up_message'>SIGN UP FOR MILE HIGH BIBLIOPHILES</p>
         <%= form_tag(users_path, method: 'post') do %>
-          <%= label_tag(:first_name, 'First Name') %><br>
-          <%= text_field_tag(:first_name) %><br>
-          <%= label_tag(:last_name, 'Last Name') %><br>
-          <%= text_field_tag(:last_name) %><br>
-          <%= label_tag(:username, 'Create A User Name') %><br>
-          <%= text_field_tag(:username) %><br>
-          <%= label_tag(:password, 'Create A Password') %><br>
-          <%= password_field_tag(:password) %><br>
-          <%= label_tag(:email, 'Your Email') %><br>
-          <%= email_field_tag(:email) %><br>
-          <%= label_tag(:bio, 'Bio') %><br>
-          <%= text_area_tag(:bio) %><br>
-          <%= submit_tag("Become A Bibliophile!") %>
+          <%= label_tag(:first_name, 'First Name', id: 'label') %><br>
+          <%= text_field_tag(:first_name, "", class: 'field') %><br>
+          <%= label_tag(:last_name, 'Last Name', id: 'label') %><br>
+          <%= text_field_tag(:last_name, "", class: 'field') %><br>
+          <%= label_tag(:username, 'Create A User Name', id: 'label') %><br>
+          <%= text_field_tag(:username, "", class: 'field') %><br>
+          <%= label_tag(:password, 'Create A Password', id: 'label') %><br>
+          <%= password_field_tag(:password, "", class: 'field') %><br>
+          <%= label_tag(:email, 'Your Email', id: 'label') %><br>
+          <%= email_field_tag(:email, "", class: 'field') %><br>
+          <%= label_tag(:bio, 'Bio', id: 'label') %><br>
+          <%= text_area_tag(:bio, "", class: 'field') %><br>
+          <%= submit_tag("Become A Bibliophile!", class: 'submit_btn') %>
         <% end %>
       </div>
     </div>
     <div id='log_in_modal'>
       <div id='log_in_form'>
+        <p id='log_in_close'>&times;</p>
+        <p id='log_in_message'>ENTER YOUR USERNAME AND PASSWORD</p>
         <%= form_tag(session_login_path) do %>
-          <%= label_tag(:username, 'User Name') %><br>
-          <%= text_field_tag(:username) %><br>
-          <%= label_tag(:password, 'Password') %><br>
-          <%= password_field_tag(:password) %><br>
-          <%= submit_tag("Log In Bibliophile!") %>
+          <%= label_tag(:username, 'User Name', id: 'label') %><br>
+          <%= text_field_tag(:username, "", class: 'field') %><br>
+          <%= label_tag(:password, 'Password', id: 'label') %><br>
+          <%= password_field_tag(:password, "", class: 'field') %><br>
+          <%= submit_tag("Log In Bibliophile!", class: 'submit_btn') %>
         <% end %>
       </div>
     </div>

@@ -131,6 +131,20 @@ table {
   font-size: 2vw;
 }
 
+#flash1 {
+	grid-column: 1 / span 5;
+	font-family: 'Permanent Marker', cursive;
+	color: #CAD593;
+	font-size: 2vw;
+}
+
+#flash2 {
+	grid-column: 1 / span 4;
+	font-family: 'Permanent Marker', cursive;
+	color: #CAD593;
+	font-size: 2vw;
+}
+
 #sign_up_modal {
 	display: flex;
   justify-content: center;

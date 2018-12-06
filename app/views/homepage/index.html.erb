@@ -12,10 +12,16 @@
     <h1 id='header_mhb'>Mile High Bibliophiles</h1>
   </div>
   <div id='navbar'>
+    <% if flash[:failure] %>
+      <p id='flash1'><%= flash[:failure] %></p>
+    <% elsif flash[:login_error] %>
+      <p id='flash2'><%= flash[:login_error] %></p>
+    <% end %>
     <% if current_user %>
        <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
        <%= link_to 'Log Out', session_logout_path, method: 'post', id: 'log_out' %>
     <% else %>
+      <p id='welcome'>Welcome, please sign in or sign up!</p>
       <button id='sign_up'>Sign Up</button>
       <button id='log_in'>Log In</button>
     <% end %>

@@ -1,3 +1,7 @@
+//= require jquery
+//= require activestorage
+//= require_tree
+
 const fetchMessages = () => {
   fetch('/api/v1/messages')
     .then(response => response.json())
@@ -13,12 +17,12 @@ const appendMessages = (messages) => {
 
 const appendMessage = (message) => {
   $('#message_board').append(
-    `<p id='message_username'>${message.user.username}</p>`
-    `<p id='message'>${message.message}</p>`
+    `<p>${message.message}</p>`
   )
 };
 
 $(document).ready(() => {
+  console.log('fire')
   $('#sign_up_modal').hide();
   $('#log_in_modal').hide();
   fetchMessages();

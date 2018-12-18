@@ -18,6 +18,5 @@ describe 'A user visits root' do
 
     expect(current_path).to eq('/')
     expect(page).to have_content('Welcome Christopher Powell')
-    expect(page).to have_content('Log Out')
   end
 end

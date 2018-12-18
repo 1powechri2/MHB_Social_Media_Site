@@ -69,6 +69,7 @@
     <% if current_user %>
       <%= form_for :message, url: api_v1_messages_path, html: {id: 'message_form', method: 'post'} do |f| %>
         <%= f.text_field :message %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.submit 'Add Message' %>
       <% end %>
     <% end %>

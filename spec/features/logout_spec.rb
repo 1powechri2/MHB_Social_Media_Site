@@ -19,7 +19,6 @@ describe 'log out function' do
 
     expect(current_path).to eq('/')
     expect(page).to have_content('Welcome Chris Powell')
-    expect(page).to have_content('Log Out')
 
     click_on 'Log Out'
 

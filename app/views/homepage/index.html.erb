@@ -4,7 +4,7 @@
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mile High Bibliophiles</title>
-    <link href="https://fonts.googleapis.com/css?family=Monoton|Libre+Baskerville|Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Libre+Baskerville|Permanent+Marker|Poppins:500|Ubuntu:300" rel="stylesheet">
   </head>
   <div id='header'>
     <div id='header_color'>
@@ -22,7 +22,7 @@
       <button id='log_in'>Log In</button>
     <% elsif current_user %>
        <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
-       <%= link_to 'Log Out', session_logout_path, method: 'post', id: 'log_out' %>
+       <%= button_to 'Log Out', session_logout_path, method: 'delete', form_class: 'log_out', id: 'log_out'%>
     <% else %>
       <p id='welcome'>Welcome, please sign in or sign up!</p>
       <button id='sign_up'>Sign Up</button>
@@ -66,6 +66,12 @@
     </div>
     <div id='message_board'>
     </div>
+    <% if current_user %>
+      <%= form_for :message, url: api_v1_messages_path, html: {id: 'message_form', method: 'post'} do |f| %>
+        <%= f.text_field :message %>
+        <%= f.submit 'Add Message' %>
+      <% end %>
+    <% end %>
   </body>
   <footer>
   </footer>

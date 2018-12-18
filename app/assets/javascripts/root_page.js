@@ -16,7 +16,6 @@ const appendMessages = (messages) => {
 };
 
 const appendMessage = (message) => {
-  debugger
   $('#message_board').append(
     `<span id="message_name">${message.user.username}</span> <span id="message_date">${message.create_date}</span><br>
     <p id="message_message">${message.message}</p>`

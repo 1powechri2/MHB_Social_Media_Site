@@ -31,7 +31,7 @@ describe 'Messages Api' do
       expect(response).to be_successful
 
       resp_json = JSON.parse(response.body, symbolize_names: true)
-      
+
       expect(resp_json.length).to eq(5)
       expect(resp_json.first[:message]).to eq('blahalalhahshslals')
       expect(resp_json.first[:user][:username]).to eq(me.username)

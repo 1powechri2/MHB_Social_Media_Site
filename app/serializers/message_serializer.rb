@@ -1,4 +1,4 @@
 class MessageSerializer < ActiveModel::Serializer
-  attributes :message
+  attributes :message, :id
   belongs_to :user
 end

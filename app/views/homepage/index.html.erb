@@ -9,15 +9,18 @@
   <div id='header'>
     <div id='header_color'>
     </div>
-    <h1 id='header_mhb'>Mile High Bibliophiles</h1>
+    <div id='header_mhb'>Mile High Bibliophiles</div>
   </div>
   <div id='navbar'>
     <% if flash[:failure] %>
       <p id='flash1'><%= flash[:failure] %></p>
+      <button id='sign_up'>Sign Up</button>
+      <button id='log_in'>Log In</button>
     <% elsif flash[:login_error] %>
       <p id='flash2'><%= flash[:login_error] %></p>
-    <% end %>
-    <% if current_user %>
+      <button id='sign_up'>Sign Up</button>
+      <button id='log_in'>Log In</button>
+    <% elsif current_user %>
        <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
        <%= link_to 'Log Out', session_logout_path, method: 'post', id: 'log_out' %>
     <% else %>
@@ -62,6 +65,8 @@
       </div>
     </div>
   </body>
+  <div id='message_board'>
+  </div>
   <footer>
   </footer>
   <%= javascript_include_tag 'root_page.js' %>

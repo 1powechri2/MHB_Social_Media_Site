@@ -1,4 +1,4 @@
-user1 = User.create(first_name: 'Caitlin', last_name: 'Muse', username: 'poetGoddes',
+user1 = User.create(first_name: 'Caitlin', last_name: 'Muse', username: 'poetGoddess',
            bio: 'President of the MHB bookclub', email: 'muse@musemail.com',
            password: 'ilovechrispowell', mhb_pics: 'The Master and Margarita')
 

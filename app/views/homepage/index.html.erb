@@ -64,15 +64,17 @@
         <% end %>
       </div>
     </div>
-    <div id='message_board'>
-    </div>
-    <% if current_user %>
+    <div id='message_grid'>
+      <div id='message_board'>
+      </div>
+      <% if current_user %>
       <%= form_for :message, url: api_v1_messages_path, html: {id: 'message_form', method: 'post'} do |f| %>
-        <%= f.text_field :message %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
-        <%= f.submit 'Add Message', id: 'add_message_btn' %>
+      <%= f.submit 'Add Message', id: 'add_message_btn' %>
+      <%= f.text_field :message %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
       <% end %>
-    <% end %>
+      <% end %>
+    </div>
   </body>
   <footer>
   </footer>

@@ -247,6 +247,22 @@ body {
 	background-color: #CAD593;
 }
 
+#message_grid {
+	display: grid;
+	grid-gap: 2vh;
+	grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20vh 5vh;
+	padding-left: 2vh;
+	padding-top: 2vh;
+}
+
+#message_board {
+	grid-column: 1 / span 2;
+	overflow: scroll;
+	background-color: white;
+	padding-left: 2vh;
+}
+
 #message_name {
 	font-family: 'Poppins', sans-serif;
 	font-size: 120%;
@@ -263,4 +279,9 @@ body {
 	padding-left: 15px;
 	padding-top: 3px;
 	padding-bottom: 7px;
+}
+
+#message_form {
+	grid-column: 1 / 2;
+	grid-row: 2 / 3
 }

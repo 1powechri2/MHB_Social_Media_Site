@@ -3,11 +3,16 @@
 //= require_tree
 
 const messageField = $('#message_message')
+const messageBoard = $('#message_board')
+
 
 const fetchMessages = () => {
   fetch('/api/v1/messages')
     .then(response => response.json())
     .then(messages => appendMessages(messages))
+    .then(() => {
+      messageBoard[0].scrollTop = messageBoard[0].scrollHeight
+    })
     .catch(error => console.log({ error }));
 };
 

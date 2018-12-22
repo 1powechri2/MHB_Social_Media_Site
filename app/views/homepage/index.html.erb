@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Monoton|Libre+Baskerville|Permanent+Marker|Poppins:500|Ubuntu:300" rel="stylesheet">
   </head>
   <div id='header'>
+    <div hidden id='blob'>
+    </div>
     <div id='header_color'>
     </div>
     <div id='header_mhb'>Mile High Bibliophiles</div>
@@ -34,7 +36,7 @@
       <div id='sign_up_form'>
         <p id='sign_up_close'>&times;</p>
         <p id='sign_up_message'>SIGN UP FOR MILE HIGH BIBLIOPHILES</p>
-        <%= form_tag(users_path, method: 'post') do %>
+        <%= form_tag(users_path, method: 'post', multipart: true) do %>
           <%= label_tag(:first_name, 'First Name', id: 'label') %><br>
           <%= text_field_tag(:first_name, "", class: 'field') %><br>
           <%= label_tag(:last_name, 'Last Name', id: 'label') %><br>
@@ -47,6 +49,8 @@
           <%= email_field_tag(:email, "", class: 'field') %><br>
           <%= label_tag(:bio, 'Bio', id: 'label') %><br>
           <%= text_area_tag(:bio, "", class: 'field') %><br>
+          <%= label_tag(:photo, 'Upload a Photo', id: 'label') %><br>
+          <%= file_field_tag(:photo, class: 'field') %><br>
           <%= submit_tag("Become A Bibliophile!", class: 'submit_btn') %>
         <% end %>
       </div>
@@ -69,10 +73,10 @@
       </div>
       <% if current_user %>
       <%= form_for :message, url: api_v1_messages_path, html: {id: 'message_form', method: 'post'} do |f| %>
-      <%= f.submit 'Add Message', id: 'add_message_btn' %>
-      <%= f.text_field :message %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-      <% end %>
+        <%= f.submit 'Add Message', id: 'add_message_btn' %>
+        <%= f.text_field :message %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <% end %>
       <% end %>
     </div>
   </body>

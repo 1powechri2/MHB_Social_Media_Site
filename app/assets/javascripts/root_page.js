@@ -5,7 +5,6 @@
 const messageField = $('#message_message')
 const messageBoard = $('#message_board')
 
-
 const fetchMessages = () => {
   fetch('/api/v1/messages')
     .then(response => response.json())
@@ -24,8 +23,12 @@ const appendMessages = (messages) => {
 
 const appendMessage = (message) => {
   $('#message_board').append(
-    `<span id="message_name">${message.user.username}</span> <span id="message_date">${message.create_date}</span><br>
-    <p id="message_message">${message.message}</p>`
+    `<img src=${message.user.photo_url} id="message_photo" alt="user_photo" height="50" width="50">
+    <div id="message_text">
+      <a href="/users/${message.user.id}" id="message_name">${message.user.username}</a>
+      <span id="message_date">${message.create_date}</span><br>
+      <p id="message_message">${message.message}</p>
+    </div>`
   )
 };
 

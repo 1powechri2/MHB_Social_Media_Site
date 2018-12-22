@@ -261,6 +261,17 @@ body {
 	overflow: scroll;
 	background-color: white;
 	padding-left: 2vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 1vh;
+}
+
+#message_photo {
+	grid-column: 1 / 2;
+}
+
+#message_text {
+	grid-column: 2 / 12;
 }
 
 #message_name {

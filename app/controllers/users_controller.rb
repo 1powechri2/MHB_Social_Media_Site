@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def show
-    user = User.find(params[:id])
-    if user.valid?
+    if user = User.find(params[:id])
       @user = user
     else
       flash[:user_failure] = 'You have entered an invalid user id.'
@@ -13,6 +12,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
+      cookies.encrypted[:user_id] = user.id
       redirect_to root_path
     else
       flash[:failure] = 'You must have entered something wrong. Please try again.'

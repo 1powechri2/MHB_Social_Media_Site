@@ -3,6 +3,7 @@ class SessionController < ApplicationController
     user = User.find_by(username: login_params[:username])
     if user && user.authenticate(login_params[:password])
       session[:user_id] = user.id
+      cookies.encrypted[:user_id] = user.id
       redirect_to root_path
     else
       flash[:login_error] = 'You Entered the wrong username or password'
@@ -12,6 +13,7 @@ class SessionController < ApplicationController
 
   def logout
     session[:user_id] = nil
+    cookies.encrypted[:user_id] = nil
     redirect_to root_path
   end
 

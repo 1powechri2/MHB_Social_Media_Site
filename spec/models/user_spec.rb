@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
 
   it { should have_secure_password }
 
-  it { should have_many(:messages) }
+  it { should have_many(:posts) }
 end
 
 describe 'A user' do
@@ -39,10 +39,10 @@ describe 'A user' do
            email: 'chris.ian.powell@gmail.com',
            password: 'sfyack1'}
     me = User.create(user)
-    me.messages.create(message: 'blahalalhahshslals')
-    me.messages.create(message: 'ghgughughuhguhuguhguhg')
-    me.messages.create(message: 'hey there Dolly')
+    me.posts.create(message: 'blahalalhahshslals')
+    me.posts.create(message: 'ghgughughuhguhuguhguhg')
+    me.posts.create(message: 'hey there Dolly')
 
-    expect(me.messages.length).to eq(3)
+    expect(me.posts.length).to eq(3)
   end
 end

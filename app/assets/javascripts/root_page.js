@@ -1,42 +1,18 @@
 //= require jquery
 //= require activestorage
-//= require_tree
 
-const messageField = $('#message_message')
+const messageField = $('#post_message')
 const messageBoard = $('#message_board')
-
-const fetchMessages = () => {
-  fetch('/api/v1/messages')
-    .then(response => response.json())
-    .then(messages => appendMessages(messages))
-    .then(() => {
-      messageBoard[0].scrollTop = messageBoard[0].scrollHeight
-    })
-    .catch(error => console.log({ error }));
-};
-
-const appendMessages = (messages) => {
-  messages.forEach(message => {
-    appendMessage(message)
-  })
-};
-
-const appendMessage = (message) => {
-  $('#message_board').append(
-    `<img src=${message.user.photo_url} id="message_photo" alt="user_photo" height="50" width="50">
-    <div id="message_text">
-      <a href="/users/${message.user.id}" id="message_name">${message.user.username}</a>
-      <span id="message_date">${message.create_date}</span><br>
-      <p id="message_message">${message.message}</p>
-    </div>`
-  )
-};
+const addMessageBtn = $('#add_message_btn')
+const scroll_bottom = (() => {
+  messageBoard[0].scrollTop = messageBoard[0].scrollHeight
+})
 
 $(document).ready(() => {
   $('#sign_up_modal').hide();
   $('#log_in_modal').hide();
-  fetchMessages();
   $('#add_message_btn').prop('disabled', true);
+  scroll_bottom();
 })
 
 $('#sign_up').click(() => {
@@ -66,12 +42,8 @@ messageField.keyup(() => {
   };
 })
 
-$('#add_message_btn').click(() => {
-  $('#message_board').empty();
+addMessageBtn.click(() => {
   setTimeout(() => {
-    fetchMessages();
-  }, 200);
-  setTimeout(() => {
-    messageField.val('');
-  }, 210);
+    scroll_bottom();
+  }, 1000);
 })

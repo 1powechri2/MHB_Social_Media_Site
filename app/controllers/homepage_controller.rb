@@ -1,5 +1,6 @@
 class HomepageController < ApplicationController
   def index
-    @messages = Message.all
+    @posts = Post.all
+    @post  = Post.new
   end
 end

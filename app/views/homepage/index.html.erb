@@ -70,12 +70,19 @@
     </div>
     <div id='message_grid'>
       <div id='message_board'>
+        <% @posts.each do |message| %>
+          <%= image_tag(message.user.photo, id:'message_photo', alt:'user_photo', height:'50', width:'50') %>
+          <%= tag.div id: 'message_text' do %>
+            <%= link_to("#{message.user.username}", user_path(message.user), id:'message_name') %>
+            <%= content_tag(:span, "#{message.create_date}", id:'message_date') %>
+            <%= content_tag(:p, "#{message.message}", id:'message_message') %>
+          <% end %>
+        <% end %>
       </div>
       <% if current_user %>
-      <%= form_for :message, url: api_v1_messages_path, html: {id: 'message_form', method: 'post'} do |f| %>
-        <%= f.submit 'Add Message', id: 'add_message_btn' %>
-        <%= f.text_field :message %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= form_for @post, url: '#' do |f| %>
+          <%= f.submit 'Add Message', id: 'add_message_btn' %>
+          <%= f.text_field :message %>
         <% end %>
       <% end %>
     </div>
@@ -83,4 +90,5 @@
   <footer>
   </footer>
   <%= javascript_include_tag 'root_page.js' %>
+  <%= javascript_include_tag 'cable.js' %>
 </html>

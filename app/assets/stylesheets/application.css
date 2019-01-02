@@ -285,14 +285,14 @@ body {
 	padding-left: 5px;
 }
 
-#message_message {
+#post_message {
 	font-family: 'Poppins:200', sans-serif;
 	padding-left: 15px;
 	padding-top: 3px;
 	padding-bottom: 7px;
 }
 
-#message_form {
+#new_post {
 	grid-column: 1 / 2;
 	grid-row: 2 / 3;
 }

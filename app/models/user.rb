@@ -5,6 +5,12 @@ class User < ApplicationRecord
   validates :bio, presence: true
   validates :email, presence: true, uniqueness: true
   has_secure_password
-  has_many :messages
+  has_many :posts
   has_one_attached :photo
+
+  include Rails.application.routes.url_helpers
+
+  def photo_url
+    rails_blob_path(photo, disposition: "attachment", only_path: true)
+  end
 end

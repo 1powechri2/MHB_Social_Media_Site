@@ -4,34 +4,35 @@
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mile High Bibliophiles</title>
-    <link href="https://fonts.googleapis.com/css?family=Monoton|Libre+Baskerville|Permanent+Marker|Poppins:500|Ubuntu:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand|Libre+Baskerville|Permanent+Marker|Poppins:500|Ubuntu:300" rel="stylesheet">
   </head>
+  <div id='navbar'>
+    <% if flash[:failure] %>
+    <p id='flash1'><%= flash[:failure] %></p>
+    <button id='sign_up'>Sign Up</button>
+    <button id='log_in'>Log In</button>
+    <% elsif flash[:login_error] %>
+    <p id='flash2'><%= flash[:login_error] %></p>
+    <button id='sign_up'>Sign Up</button>
+    <button id='log_in'>Log In</button>
+    <% elsif current_user %>
+    <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
+    <%= button_to 'Log Out', session_logout_path, method: 'delete', form_class: 'log_out', id: 'log_out'%>
+    <% else %>
+    <p id='welcome'>Welcome, please sign in or sign up!</p>
+    <button id='sign_up'>Sign Up</button>
+    <button id='log_in'>Log In</button>
+    <% end %>
+  </div>
   <div id='header'>
     <div hidden id='blob'>
     </div>
     <div id='header_color'>
     </div>
+    <img src="/assets/book.png" height="42" width="42">
     <div id='header_mhb'>Mile High Bibliophiles</div>
+    <img src="smiley.gif" alt="Smiley face" height="42" width="42">
   </div>
-  <div id='navbar'>
-    <% if flash[:failure] %>
-      <p id='flash1'><%= flash[:failure] %></p>
-      <button id='sign_up'>Sign Up</button>
-      <button id='log_in'>Log In</button>
-    <% elsif flash[:login_error] %>
-      <p id='flash2'><%= flash[:login_error] %></p>
-      <button id='sign_up'>Sign Up</button>
-      <button id='log_in'>Log In</button>
-    <% elsif current_user %>
-       <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
-       <%= button_to 'Log Out', session_logout_path, method: 'delete', form_class: 'log_out', id: 'log_out'%>
-    <% else %>
-      <p id='welcome'>Welcome, please sign in or sign up!</p>
-      <button id='sign_up'>Sign Up</button>
-      <button id='log_in'>Log In</button>
-    <% end %>
-  </div>
-  <body>
     <div id='sign_up_modal'>
       <div id='sign_up_form'>
         <p id='sign_up_close'>&times;</p>
@@ -41,11 +42,11 @@
           <%= text_field_tag(:first_name, "", class: 'field') %><br>
           <%= label_tag(:last_name, 'Last Name', id: 'label') %><br>
           <%= text_field_tag(:last_name, "", class: 'field') %><br>
-          <%= label_tag(:username, 'Create A User Name', id: 'label') %><br>
+          <%= label_tag(:username, 'Username', id: 'label') %><br>
           <%= text_field_tag(:username, "", class: 'field') %><br>
-          <%= label_tag(:password, 'Create A Password', id: 'label') %><br>
+          <%= label_tag(:password, 'Password', id: 'label') %><br>
           <%= password_field_tag(:password, "", class: 'field') %><br>
-          <%= label_tag(:email, 'Your Email', id: 'label') %><br>
+          <%= label_tag(:email, 'Email', id: 'label') %><br>
           <%= email_field_tag(:email, "", class: 'field') %><br>
           <%= label_tag(:bio, 'Bio', id: 'label') %><br>
           <%= text_area_tag(:bio, "", class: 'field') %><br>
@@ -68,7 +69,11 @@
         <% end %>
       </div>
     </div>
+    <body>
     <div id='message_grid'>
+      <div id='message_header'>
+        <p id='mhb_message_board'>MHB POSTS</p>
+      </div>
       <div id='message_board'>
         <% @posts.each do |message| %>
           <%= image_tag(message.user.photo, id:'message_photo', alt:'user_photo', height:'50', width:'50') %>

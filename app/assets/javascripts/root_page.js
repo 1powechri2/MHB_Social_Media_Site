@@ -5,7 +5,7 @@ const messageField = $('#post_message')
 const messageBoard = $('#message_board')
 const addMessageBtn = $('#add_message_btn')
 const scroll_bottom = (() => {
-  messageBoard[0].scrollTop = messageBoard[0].scrollHeight
+  messageBoard[0].scrollTop = messageBoard[0].scrollHeight + 600
 })
 
 $(document).ready(() => {
@@ -45,5 +45,5 @@ messageField.keyup(() => {
 addMessageBtn.click(() => {
   setTimeout(() => {
     scroll_bottom();
-  }, 1000);
+  }, 100);
 })

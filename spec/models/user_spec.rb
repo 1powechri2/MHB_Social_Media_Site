@@ -21,7 +21,6 @@ describe 'A user' do
            last_name: 'Powell',
            username: 'booklover420',
            bio: 'I love stuff, fun haha.',
-           mhb_pics: 'Blackass',
            email: 'chris.ian.powell@gmail.com',
            password: 'sfyack1'}
     me = User.create(user)
@@ -35,7 +34,20 @@ describe 'A user' do
            last_name: 'Powell',
            username: 'booklover420',
            bio: 'I love stuff, fun haha.',
-           mhb_pics: 'Blackass',
+           email: 'chris.ian.powell@gmail.com',
+           password: 'sfyack1'}
+    me = User.create(user)
+    me.posts.create(message: 'blahalalhahshslals')
+    me.posts.create(message: 'ghgughughuhguhuguhguhg')
+    me.posts.create(message: 'hey there Dolly')
+
+    expect(me.posts.length).to eq(3)
+  end
+  it 'is an admin' do
+    user = {first_name: 'Chris',
+           last_name: 'Powell',
+           username: 'booklover420',
+           bio: 'I love stuff, fun haha.',
            email: 'chris.ian.powell@gmail.com',
            password: 'sfyack1'}
     me = User.create(user)

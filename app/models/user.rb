@@ -5,8 +5,10 @@ class User < ApplicationRecord
   validates :bio, presence: true
   validates :email, presence: true, uniqueness: true
 
+  enum auth_type: [:user, :admin]
+
   has_secure_password
-  
+
   has_many :posts
   has_one_attached :photo
 

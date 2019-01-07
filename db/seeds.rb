@@ -1,6 +1,6 @@
-user1 = User.create(first_name: 'Caitlin', last_name: 'Muse', username: 'poetGoddess',
-           bio: 'President of the MHB bookclub', email: 'muse@musemail.com',
-           password: 'ilovechrispowell')
+# user1 = User.create(first_name: 'Caitlin', last_name: 'Muse', username: 'poetGoddess',
+#            bio: 'President of the MHB bookclub', email: 'muse@musemail.com',
+#            password: 'ilovechrispowell')
 #
 # user2 = User.create(first_name: 'Chris', last_name: 'Powell', username: 'poetKing',
 #            bio: 'Vice President of the MHB bookclub', email: 'chris@chrismail.com',

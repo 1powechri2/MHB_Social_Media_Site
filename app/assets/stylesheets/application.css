@@ -345,6 +345,9 @@ table {
 	background-color: white;
 	margin-left: 20%;
 	margin-right: 20%;
+	background-image: url(/assets/paper.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 #books_header {
@@ -362,6 +365,7 @@ table {
 	justify-content: center;
 	font-family: 'Permanent Marker', cursive;
 	font-size: 3vh;
+	padding-bottom: 1vh;
 }
 
 #book_author {
@@ -369,6 +373,7 @@ table {
 	justify-content: center;
 	font-family: 'Permanent Marker', cursive;
 	font-size: 3vh;
+	padding-bottom: 1vh;
 }
 
 #book_photo {
@@ -376,7 +381,7 @@ table {
 	justify-content: center;
 }
 
-#photo {
+#photo_of_book {
 	height: 40vh;
 	width: 27vh;
 }

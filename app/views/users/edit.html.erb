@@ -7,25 +7,25 @@
     <link href="https://fonts.googleapis.com/css?family=Shrikhand|Libre+Baskerville|Permanent+Marker|Poppins:500|Ubuntu:300|Averia+Serif+Libre" rel="stylesheet">
   </head>
   <div id='navbar'>
-    <% if current_user %>
-    <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
+    <p id='welcome'> Welcome <%= @user.first_name %> <%= @user.last_name %></p>
     <p id='homepage_link'>Back to the <%= link_to "homepage", root_path %></p>
     <%= button_to 'Log Out', session_logout_path, method: 'delete', form_class: 'log_out', id: 'log_out'%>
-    <% else %>
-    <p id='welcome'>Welcome, Go to the <%= link_to "homepage", root_path %> to sign in or sign up!</p>
-    <% end %>
   </div>
   <body id='profile_body'>
     <header id=profile_header>
-      MHB Profile for: <%= @user.first_name %> <%= @user.last_name %>
+      HERE YOU CAN EDIT YOUR INFORMATION
     </header>
+    <%= form_for @user, :html => { :multipart => true } do |f| %>
     <div id='profile_information'>
       <%= image_tag(@user.photo, id:'profile_photo', alt:'profile_photo') %>
       <div id='user_text'>
-        User Name: <%= @user.username %><br>
-        Email: <%= @user.email %><br>
-        Bio: <%= @user.bio %>
+        User Name: <%= f.text_field :username %><br>
+        Email: <%= f.email_field :email  %><br>
+        Bio: <%= f.text_area :bio %><br>
+        Pic: <%= f.file_field(:photo, class: 'field') %>
+        <%= f.submit("Update You Profile", class: 'submit_btn') %>
       </div>
     </div>
+    <% end %>
   </body>
 </html>

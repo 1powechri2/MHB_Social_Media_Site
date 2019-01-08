@@ -17,6 +17,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'jquery-rails'
 gem 'sprockets', '>= 3.0.0'
 gem 'sprockets-es6'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

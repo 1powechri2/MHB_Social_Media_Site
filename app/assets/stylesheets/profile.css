@@ -12,6 +12,14 @@
 	font-size: 4vw;
 }
 
+#homepage_link {
+  grid-column: 6 / span 2;
+  font-family: 'Permanent Marker', cursive;
+  color: #07020D;
+  font-size: 2vw;
+  align-self: center;
+}
+
 #profile_information {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

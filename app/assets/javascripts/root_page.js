@@ -41,9 +41,3 @@ messageField.keyup(() => {
     $('#add_message_btn').prop('disabled', false);
   };
 })
-
-addMessageBtn.click(() => {
-  setTimeout(() => {
-    scroll_bottom();
-  }, 100);
-})

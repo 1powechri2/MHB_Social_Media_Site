@@ -19,6 +19,9 @@ $(document).ready(function() {
                               </div>`);
     },
     send_message(message) {
+      setTimeout(() => {
+        scroll_bottom();
+      }, 100);
       return this.perform('send_message', {message});
     }
   }

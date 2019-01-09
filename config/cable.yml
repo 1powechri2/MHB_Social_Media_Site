@@ -7,4 +7,6 @@ development: *redis
 test:
   adapter: async
 
-production: *redis
+production:
+  adapter: redis
+  url: <%= ENV['REDIS_URL'] %>

@@ -36,22 +36,22 @@
       <div id='sign_up_form'>
         <p id='sign_up_close'>&times;</p>
         <p id='sign_up_message'>SIGN UP FOR MILE HIGH BIBLIOPHILES</p>
-        <%= form_tag(users_path, method: 'post', multipart: true) do %>
-          <%= label_tag(:first_name, 'First Name', id: 'label') %><br>
-          <%= text_field_tag(:first_name, "", class: 'field') %><br>
-          <%= label_tag(:last_name, 'Last Name', id: 'label') %><br>
-          <%= text_field_tag(:last_name, "", class: 'field') %><br>
-          <%= label_tag(:username, 'Username', id: 'label') %><br>
-          <%= text_field_tag(:username, "", class: 'field') %><br>
-          <%= label_tag(:password, 'Password', id: 'label') %><br>
-          <%= password_field_tag(:password, "", class: 'field') %><br>
-          <%= label_tag(:email, 'Email', id: 'label') %><br>
-          <%= email_field_tag(:email, "", class: 'field') %><br>
-          <%= label_tag(:bio, 'Bio', id: 'label') %><br>
-          <%= text_area_tag(:bio, "", class: 'field') %><br>
-          <%= label_tag(:photo, 'Upload a Photo', id: 'label') %><br>
-          <%= file_field_tag(:photo, class: 'field') %><br>
-          <%= submit_tag("Become A Bibliophile!", class: 'submit_btn') %>
+        <%= form_for @user, multipart: true do |f| %>
+          <%= f.label(:first_name, 'First Name', id: 'label') %><br>
+          <%= f.text_field(:first_name, class: 'field') %><br>
+          <%= f.label(:last_name, 'Last Name', id: 'label') %><br>
+          <%= f.text_field(:last_name, class: 'field') %><br>
+          <%= f.label(:username, 'Username', id: 'label') %><br>
+          <%= f.text_field(:username, class: 'field') %><br>
+          <%= f.label(:password, 'Password', id: 'label') %><br>
+          <%= f.password_field(:password, class: 'field') %><br>
+          <%= f.label(:email, 'Email', id: 'label') %><br>
+          <%= f.email_field(:email, class: 'field') %><br>
+          <%= f.label(:bio, 'Bio', id: 'label') %><br>
+          <%= f.text_area(:bio, class: 'field') %><br>
+          <%= f.label(:photo, 'Upload a Photo', id: 'label') %><br>
+          <%= f.file_field(:photo, class: 'field') %><br>
+          <%= f.submit("Become A Bibliophile!", class: 'submit_btn') %>
         <% end %>
       </div>
     </div>

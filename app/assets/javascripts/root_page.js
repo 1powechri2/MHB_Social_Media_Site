@@ -4,15 +4,12 @@
 const messageField = $('#post_message')
 const messageBoard = $('#message_board')
 const addMessageBtn = $('#add_message_btn')
-const scroll_bottom = (() => {
-  messageBoard[0].scrollTop = messageBoard[0].scrollHeight + 600
-})
+
 
 $(document).ready(() => {
   $('#sign_up_modal').hide();
   $('#log_in_modal').hide();
   $('#add_message_btn').prop('disabled', true);
-  scroll_bottom();
 })
 
 $('#sign_up').click(() => {

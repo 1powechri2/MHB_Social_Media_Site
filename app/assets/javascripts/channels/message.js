@@ -1,9 +1,10 @@
 
 $(document).ready(function() {
-  const scroll_bottom = (() => {
-    messageBoard[0].scrollTop = messageBoard[0].scrollHeight
-  })
   const messages = $('#message_board');
+  const scroll_bottom = (() => {
+    messages.scrollTop(messages.prop("scrollHeight"))
+  })
+  scroll_bottom();
   if (messages.length > 0) {
     App.global_chat = App.cable.subscriptions.create({
       channel: 'MessagesChannel'
@@ -11,17 +12,15 @@ $(document).ready(function() {
     connected() {},
     disconnected() {},
     received(data) {
-      return messages.append(`<img id="message_photo" alt="user_photo" height="50" width="50" src="${data.photo}">
+      messages.append(`<img id="message_photo" alt="user_photo" height="50" width="50" src="${data.photo}">
                               <div id="message_text">
                                 <a id="message_name" href="/users/${data.user_id}">${data.username}</a>
                                 <span id="message_date">${data.date}</span>
                                 <p id="message_message">${data.message}</p>
                               </div>`);
+      scroll_bottom();
     },
     send_message(message) {
-      setTimeout(() => {
-        scroll_bottom();
-      }, 100);
       return this.perform('send_message', {message});
     }
   }

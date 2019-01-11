@@ -6,6 +6,13 @@
     <title>The Mile High Bibliophiles</title>
     <link href="https://fonts.googleapis.com/css?family=Shrikhand|Libre+Baskerville|Permanent+Marker|Poppins:500|Ubuntu:300" rel="stylesheet">
   </head>
+  <div id='header'>
+    <div hidden id='blob'>
+    </div>
+    <div id='header_color'>
+    </div>
+    <div id='header_mhb'>Mile High Bibliophiles</div>
+  </div>
   <div id='navbar'>
     <% if flash[:failure] %>
     <p id='flash1'><%= flash[:failure] %></p>
@@ -15,6 +22,10 @@
     <p id='flash2'><%= flash[:login_error] %></p>
     <button id='sign_up'>Sign Up</button>
     <button id='log_in'>Log In</button>
+    <% elsif current_user && current_user.admin? %>
+    <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
+    <%= link_to 'administration', admin_bibliophile_admin_path, id: 'admin_link' %>
+    <%= button_to 'Log Out', session_logout_path, method: 'delete', form_class: 'log_out', id: 'log_out'%>
     <% elsif current_user %>
     <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
     <%= button_to 'Log Out', session_logout_path, method: 'delete', form_class: 'log_out', id: 'log_out'%>
@@ -23,14 +34,6 @@
     <button id='sign_up'>Sign Up</button>
     <button id='log_in'>Log In</button>
     <% end %>
-  </div>
-  <div id='header'>
-    <div hidden id='blob'>
-    </div>
-    <div id='header_color'>
-    </div>
-    <img src="/assets/book.png" height="42" width="42">
-    <div id='header_mhb'>Mile High Bibliophiles</div>
   </div>
     <div id='sign_up_modal'>
       <div id='sign_up_form'>

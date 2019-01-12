@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     get 'bibliophile_admin', to: 'bibliophile_admin#index'
     patch 'bibliophile_admin_user_update', to: 'bibliophile_admin#user_update'
   end
+
+  resources :books
 end

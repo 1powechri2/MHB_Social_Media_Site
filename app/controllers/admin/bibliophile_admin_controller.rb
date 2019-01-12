@@ -7,8 +7,14 @@ class Admin::BibliophileAdminController < ApplicationController
   end
 
   def user_update
-    binding.pry
+    if user = User.find(user_params[:id])
+      user.update(user_params)
+      redirect_to admin_bibliophile_admin_path
+    else
+      render :file => 'public/404.html', :status => :not_found, :layout => false
+    end
   end
+
   private
 
   def admin_check

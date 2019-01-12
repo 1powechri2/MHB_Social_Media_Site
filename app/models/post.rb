@@ -5,6 +5,6 @@ class Post < ApplicationRecord
   after_create_commit { MessageBroadcastJob.perform_later(self) }
 
   def create_date
-    created_at.strftime('%A %b %w, %Y %l:%M')
+    created_at.strftime('%A %b %e %Y %l:%M')
   end
 end

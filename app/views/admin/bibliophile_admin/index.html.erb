@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mile High Bibliophiles</title>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand|Libre+Baskerville|Permanent+Marker|Poppins:500|Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <div id='users'>
+      <% @users.each do |user| %>
+        <%= form_for user, url: admin_bibliophile_admin_user_update_path do |f| %>
+          <%= content_tag(:span, "#{user.first_name} #{user.last_name}") %>
+          <%= content_tag(:p, "#{user.email}") %>
+          <%= f.hidden_field('id') %>
+          <%= f.select('auth_type', User.auth_types.collect {|key, val| [key] }) %>
+          <%= f.submit("Create Admin") %>
+        <% end %>
+      <% end %>
+    </div>
+  </body>
+</html>

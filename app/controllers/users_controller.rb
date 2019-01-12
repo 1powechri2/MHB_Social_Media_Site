@@ -28,12 +28,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    binding.pry
     current_user.update(user_params)
     redirect_to user_path
   end
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :password, :email, :bio, :photo)
+    params.require(:user).permit(:first_name, :last_name, :username, :password, :email, :bio, :photo, :auth_type )
   end
 end

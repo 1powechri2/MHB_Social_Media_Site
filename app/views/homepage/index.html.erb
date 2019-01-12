@@ -24,7 +24,7 @@
     <button id='log_in'>Log In</button>
     <% elsif current_user && current_user.admin? %>
     <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
-    <%= link_to 'administration', admin_bibliophile_admin_path, id: 'admin_link' %>
+    <%= button_to 'administration', admin_bibliophile_admin_path, method: 'get', form_class: 'admin_link', id: 'admin_link' %>
     <%= button_to 'Log Out', session_logout_path, method: 'delete', form_class: 'log_out', id: 'log_out'%>
     <% elsif current_user %>
     <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>

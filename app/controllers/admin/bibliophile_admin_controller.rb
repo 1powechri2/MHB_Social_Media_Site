@@ -4,6 +4,8 @@ class Admin::BibliophileAdminController < ApplicationController
     @users = User.all
     @book  = Book.new
     @books = Book.all
+    @event = Event.new
+    @events = Event.all
   end
 
   def user_update
@@ -18,7 +20,7 @@ class Admin::BibliophileAdminController < ApplicationController
   private
 
   def admin_check
-    unless current_user.admin?
+    unless current_user && current_user.admin?
       render :file => 'public/404.html', :status => :not_found, :layout => false
     end
   end

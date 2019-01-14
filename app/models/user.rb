@@ -9,8 +9,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  has_many :posts
-  has_one_attached :photo
+  has_many :posts, :dependent => :delete_all
+  has_one_attached :photo, :dependent => :delete_all
 
   include Rails.application.routes.url_helpers
 

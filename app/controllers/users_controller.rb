@@ -33,6 +33,11 @@ class UsersController < ApplicationController
     redirect_to user_path
   end
 
+  def destroy
+    User.destroy(params[:id])
+    redirect_to admin_bibliophile_admin_path
+  end
+
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :username, :password, :email, :bio, :photo, :auth_type )

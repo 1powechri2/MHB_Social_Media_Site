@@ -90,7 +90,7 @@ table {
   width: 100;
   height: 50px;
   display: grid;
-	background: linear-gradient(to left, #113A97, #E8182A, #f99a00);
+	background: linear-gradient(to left, #0161FA, #99C715);
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 50px;
 }

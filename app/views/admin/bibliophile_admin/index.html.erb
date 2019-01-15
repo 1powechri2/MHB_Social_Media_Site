@@ -20,9 +20,9 @@
           <%= f.hidden_field('id') %>
           <%= f.select('auth_type', User.auth_types.collect {|key, val| [key]}) %>
           <%= f.submit("Create Admin") %>
-        <% end %>
-        <%= form_for user, method: :delete do |f| %>
-          <%= f.submit("Delete User") %>
+            <%= form_for user, method: :delete do |f| %>
+            <%= f.submit("Delete User") %>
+            <% end %>
         <% end %>
       <% end %>
     </div>
@@ -47,22 +47,33 @@
         <% @books.each do |book| %>
           <%= form_for book, :html => { :multipart => true } do |f| %>
           <%= f.label(:title, 'Book Title', id: 'label_admin') %>
-          <%= f.text_field(:title, id: 'field_admin') %>
+          <%= f.text_field(:title, id: 'field_admin') %><br>
           <%= f.label(:author, 'Book Author', id: 'label_admin') %>
-          <%= f.text_field(:author, id: 'field_admin') %>
+          <%= f.text_field(:author, id: 'field_admin') %><br>
           <%= f.label(:description, 'Add a Description', id: 'label_admin') %><br>
           <%= f.text_area(:description, id: 'field_admin') %><br>
           <%= content_tag(:p, "Current Photo") %>
           <%= image_tag(book.photo, id:'photo_of_book', alt:'book_photo') %><br>
-          <%= f.label(:photo, 'Change Photo', id: 'label_admin') %>
-          <%= f.file_field(:photo, id: 'field_admin') %>
+          <%= f.label(:photo, 'Change Photo', id: 'label_admin') %><br>
+          <%= f.file_field(:photo, id: 'field_admin') %><br>
           <%= f.select('status', Book.statuses.collect {|key, val| [key]}) %><br>
           <%= f.submit %>
+          <%= form_for book, method: :delete do |f| %>
+            <%= f.submit('Delete Book') %>
+          <% end %>
           <% end %>
         <% end %>
       </div>
     </div>
     <div id='admin_events'>
+      <div id='new_event_admin'>
+        <%= form_for @event do |f| %>
+        <%= content_tag(:p, "Enter An Event") %>
+        <%= f.label(:message, 'Event Message', id: 'event_message_admin') %>
+        <%= f.text_field(:message, class: 'event_message_admin') %>
+        <%= f.submit %>
+        <% end %>
+      </div>
       <% if @events.empty? %>
         <%= content_tag(:p, "There are no current events posted.") %>
       <% else %>
@@ -73,14 +84,6 @@
           <% end %>
         <% end %>
       <% end %>
-      <div id='new_event_admin'>
-        <%= form_for @event do |f| %>
-          <%= content_tag(:p, "Enter An Event") %>
-          <%= f.label(:message, 'Event Message', id: 'event_message_admin') %>
-          <%= f.text_field(:message, class: 'event_message_admin') %>
-          <%= f.submit %>
-        <% end %>
-      </div>
     </div>
   </div>
 </html>

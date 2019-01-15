@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :books
 
   resources :events, except: [:index, :show]
+
+  resources :posts, only: [:destroy]
 end

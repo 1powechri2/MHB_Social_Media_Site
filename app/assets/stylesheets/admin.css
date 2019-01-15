@@ -2,3 +2,25 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 }
+
+.edit_user {
+	border-top: 1px solid Black;
+	border-bottom: 1px solid Black;
+}
+
+.edit_book {
+	border-top: 1px solid Black;
+	border-bottom: 1px solid Black;
+}
+
+.edit_event {
+	border-top: 1px solid Black;
+}
+
+#new_event_admin {
+	border-bottom: 1px solid Black;
+}
+
+#current_books {
+	overflow: scroll;
+}

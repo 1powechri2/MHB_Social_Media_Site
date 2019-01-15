@@ -27,5 +27,13 @@
       </div>
     </div>
     <% end %>
+    <div id='user_messages'>
+      <% @user.posts.each do |post| %>
+      <%= form_for post, method: :delete do |f| %>
+      <%= content_tag(:p, "#{post.message}") %>
+      <%= f.submit("Delete Message") %>
+      <% end %>
+      <% end %>
+    </div>
   </body>
 </html>

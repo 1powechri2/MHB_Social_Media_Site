@@ -1,10 +1,15 @@
 class BooksController < ApplicationController
   def create
     if book = Book.create(book_params)
-      redirect_to root_path
+      redirect_to admin_bibliophile_admin_path
     else
       redirect_to admin_bibliophile_admin_path
     end
+  end
+
+  def destroy
+    Book.destroy(params[:id])
+    redirect_to admin_bibliophile_admin_path
   end
 
   private

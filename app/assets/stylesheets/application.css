@@ -344,6 +344,7 @@ table {
 
 #post_message {
 	font-family: 'Poppins:200', sans-serif;
+	border: 2px solid #00ff00;
 	padding-left: 15px;
 	padding-top: 3px;
 	padding-bottom: 7px;

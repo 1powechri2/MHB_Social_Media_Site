@@ -275,10 +275,11 @@ table {
 .submit_btn {
 	width: 20vw;
 	margin-top: 10px;
-	padding: 16px 32px;
+	height: 6vw;
 	border-radius: 50px;
 	font-family: 'Libre Baskerville', serif;
 	font-size: 1vw;
+	text-align: center;
 }
 
 #homepage_body {

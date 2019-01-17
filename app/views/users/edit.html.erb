@@ -25,9 +25,9 @@
         Pic: <%= f.file_field(:photo, class: 'field') %><br>
         <%= f.submit("Update You Profile", class: 'submit_btn') %>
       </div>
-    </div>
     <% end %>
     <div id='user_messages'>
+      <p>Here Are Your Last 20 Posts</p>
       <% @user.posts.each do |post| %>
       <%= form_for post, method: :delete do |f| %>
       <%= content_tag(:p, "#{post.message}") %>
@@ -35,5 +35,6 @@
       <% end %>
       <% end %>
     </div>
+  </div>
   </body>
 </html>

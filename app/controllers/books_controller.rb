@@ -7,6 +7,14 @@ class BooksController < ApplicationController
     end
   end
 
+  def update
+    if book = Book.find(params[:id]).update(book_params)
+      redirect_to admin_bibliophile_admin_path
+    else
+      render :file => 'public/500.html', :status => :not_found, :layout => false
+    end
+  end
+
   def destroy
     Book.destroy(params[:id])
     redirect_to admin_bibliophile_admin_path
@@ -15,6 +23,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :description, :photo, :status)
+    params.require(:book).permit(:title, :author, :description, :photo, :status, :id)
   end
 end

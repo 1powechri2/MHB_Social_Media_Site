@@ -59,7 +59,7 @@
           <%= f.select('status', Book.statuses.collect {|key, val| [key]}) %><br>
           <%= f.submit %>
           <% end %>
-          <%= form_for book, method: :delete do |f| %>
+          <%= form_for book, :html => {class: 'delete_book_admin'}, method: :delete do |f| %>
             <%= f.submit('Delete Book') %>
           <% end %>
         <% end %>

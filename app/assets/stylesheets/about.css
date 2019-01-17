@@ -13,17 +13,16 @@
 }
 
 #read_books_grid {
-  height: 160vh;
-  
+  height: 100%;
   display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 30vw;
   align-items: center;
   justify-items: center;
 }
 
 #read_books_header {
   grid-column: 1 / span 5;
-  margin-top: 5%;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 5vw;

@@ -5,6 +5,9 @@
 
 .edit_user {
 	border-top: 1px solid Black;
+}
+
+.delete_user_admin {
 	border-bottom: 1px solid Black;
 }
 

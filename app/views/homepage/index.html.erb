@@ -16,21 +16,26 @@
   <div id='navbar'>
     <% if flash[:failure] %>
     <p id='flash1'><%= flash[:failure] %></p>
+    <%= link_to 'About Us', about_path, form_class: 'about', id: 'about' %>
     <button id='sign_up'>Sign Up</button>
     <button id='log_in'>Log In</button>
     <% elsif flash[:login_error] %>
     <p id='flash2'><%= flash[:login_error] %></p>
+    <%= link_to 'About Us', about_path, form_class: 'about', id: 'about' %>
     <button id='sign_up'>Sign Up</button>
     <button id='log_in'>Log In</button>
     <% elsif current_user && current_user.admin? %>
     <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
+    <%= link_to 'About Us', about_path, form_class: 'about', id: 'about' %>
     <%= button_to 'administration', admin_bibliophile_admin_path, method: 'get', form_class: 'admin_link', id: 'admin_link' %>
     <%= button_to 'Log Out', session_logout_path, method: 'delete', form_class: 'log_out', id: 'log_out'%>
     <% elsif current_user %>
     <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
+    <%= link_to 'About Us', about_path, form_class: 'about', id: 'about' %>
     <%= button_to 'Log Out', session_logout_path, method: 'delete', form_class: 'log_out', id: 'log_out'%>
     <% else %>
     <p id='welcome'>Welcome, please sign in or sign up!</p>
+    <%= link_to 'About Us', about_path, form_class: 'about', id: 'about' %>
     <button id='sign_up'>Sign Up</button>
     <button id='log_in'>Log In</button>
     <% end %>

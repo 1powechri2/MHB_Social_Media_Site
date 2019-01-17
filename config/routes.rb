@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :events, except: [:index, :show]
 
   resources :posts, only: [:destroy]
+
+  get 'about', to: 'about#index'
 end

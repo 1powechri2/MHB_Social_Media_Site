@@ -94,6 +94,15 @@ table {
   grid-template-rows: 50px;
 }
 
+#about {
+	grid-column: 6 / span 1;
+	font-family: 'Permanent Marker', cursive;
+  color: #07020D;
+	align-self: center;
+  font-size: 2vw;
+	text-decoration: none;
+}
+
 #sign_up {
   grid-column: 7 / span 1;
   font-family: 'Permanent Marker', cursive;
@@ -102,7 +111,6 @@ table {
 	padding-left: 3vw;
 	background-color: transparent;
 	border: none;
-
 }
 
 #log_in {

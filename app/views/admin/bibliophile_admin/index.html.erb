@@ -58,9 +58,9 @@
           <%= f.file_field(:photo, id: 'field_admin') %><br>
           <%= f.select('status', Book.statuses.collect {|key, val| [key]}) %><br>
           <%= f.submit %>
+          <% end %>
           <%= form_for book, method: :delete do |f| %>
             <%= f.submit('Delete Book') %>
-          <% end %>
           <% end %>
         <% end %>
       </div>

@@ -31,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
     current_user.update(user_params)
     redirect_to user_path
   end

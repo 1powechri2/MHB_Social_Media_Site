@@ -28,7 +28,7 @@
     <% end %>
     <div id='user_messages'>
       <p id='user_messages_header'>Here Are Your Last 20 Posts:</p>
-      <% @user.posts.each do |post| %>
+      <% @user.last_twenty_posts.each do |post| %>
       <%= form_for post, method: :delete do |f| %>
       <%= content_tag(:p, "#{post.message}") %>
       <%= f.submit("Delete Message") %>

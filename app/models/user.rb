@@ -17,4 +17,8 @@ class User < ApplicationRecord
   def photo_url
     rails_blob_path(photo, disposition: "attachment", only_path: true)
   end
+
+  def last_twenty_posts
+    self.posts.order(created_at: :desc).limit(20)
+  end
 end

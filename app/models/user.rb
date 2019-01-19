@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :bio, presence: true
   validates :email, presence: true, uniqueness: true
 
-  enum auth_type: [:user, :admin]
+  enum auth_type: [:user, :admin, :visitor]
 
   has_secure_password
 

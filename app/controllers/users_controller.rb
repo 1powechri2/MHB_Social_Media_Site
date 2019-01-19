@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    if params[:photo] == nil
+    if user_params[:photo] == nil
       user.photo.attach(io: File.open('./app/assets/images/booknerd.jpg'), filename: 'booknerd.jpg', content_type: 'image/jpg')
     end
     if user.save

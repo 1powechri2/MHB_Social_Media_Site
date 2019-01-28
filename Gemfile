@@ -29,6 +29,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'bullet'
 end
 
 group :development do

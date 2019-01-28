@@ -3,7 +3,7 @@ class Admin::BibliophileAdminController < ApplicationController
   def index
     @users = User.all
     @book  = Book.new
-    @books = Book.all
+    @books = Book.includes(photo_attachment: [:blob]).all
     @event = Event.new
     @events = Event.all
   end

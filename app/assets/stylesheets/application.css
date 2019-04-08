@@ -60,11 +60,14 @@ table {
 
 @media (min-width: 1001px) {
 	#header {
+		background-color: black;
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
 	  width: 100%;
 	  height: 100px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	  position: relative;
 	}
 
@@ -96,11 +99,20 @@ table {
 	}
 
 	#about {
-		grid-column: 6 / span 1;
+		grid-column: 5 / span 1;
 		font-family: 'Permanent Marker', cursive;
 	  color: #07020D;
 		align-self: center;
 	  font-size: 2vw;
+		text-decoration: none;
+	}
+
+	#message-board {
+		grid-column: 6 / span 1;
+		font-family: 'Permanent Marker', cursive;
+		color: #07020D;
+		align-self: center;
+		font-size: 2vw;
 		text-decoration: none;
 	}
 
@@ -155,7 +167,7 @@ table {
 	}
 
 	#welcome {
-		grid-column: 1 / span 5;
+		grid-column: 1 / span 3;
 		font-family: 'Permanent Marker', cursive;
 	  color: #07020D;
 	  font-size: 2vw;
@@ -284,7 +296,6 @@ table {
 	}
 
 	#homepage_body {
-		background-image: url(/assets/lights.jpg);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-origin: content-box;
@@ -446,6 +457,7 @@ table {
 
 @media (max-width: 1000px) {
 	#header {
+		background-color: black;
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
@@ -487,6 +499,15 @@ table {
 	  color: #07020D;
 		align-self: center;
 	  font-size: 2vw;
+		text-decoration: none;
+	}
+
+	#message-board {
+		grid-column: 6 / span 1;
+		font-family: 'Permanent Marker', cursive;
+		color: #07020D;
+		align-self: center;
+		font-size: 2vw;
 		text-decoration: none;
 	}
 
@@ -541,7 +562,7 @@ table {
 	}
 
 	#welcome {
-		grid-column: 1 / span 5;
+		grid-column: 1 / span 3;
 		font-family: 'Permanent Marker', cursive;
 	  color: #07020D;
 	  font-size: 2vw;
@@ -670,7 +691,6 @@ table {
 	}
 
 	#homepage_body {
-		background-image: url(/assets/lights.jpg);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-origin: content-box;
@@ -877,6 +897,15 @@ table {
 		text-decoration: none;
 	}
 
+	#message-board {
+		grid-column: 6 / span 1;
+		font-family: 'Permanent Marker', cursive;
+		color: #07020D;
+		align-self: center;
+		font-size: 2vw;
+		text-decoration: none;
+	}
+
 	#sign_up {
 	  grid-column: 7 / span 1;
 	  font-family: 'Permanent Marker', cursive;
@@ -928,7 +957,7 @@ table {
 	}
 
 	#welcome {
-		grid-column: 1 / span 5;
+		grid-column: 1 / span 3;
 		font-family: 'Permanent Marker', cursive;
 	  color: #07020D;
 	  font-size: 2vw;
@@ -1057,7 +1086,6 @@ table {
 	}
 
 	#homepage_body {
-		background-image: url(/assets/lights.jpg);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-origin: content-box;

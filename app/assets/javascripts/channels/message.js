@@ -1,4 +1,4 @@
-
+//= require jquery
 $(document).ready(function() {
   const messages = $('#message_board');
   const scroll_bottom = (() => {

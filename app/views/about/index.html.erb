@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8' />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Mile High Bibliophiles</title>
-    <link href="https://fonts.googleapis.com/css?family=Shrikhand|Libre+Baskerville|Permanent+Marker|Poppins:500|Ubuntu:300" rel="stylesheet">
-  </head>
-  <div id='navbar'>
-    <p id='welcome'> About The Mile High Bibliophiles </p>
-    <p id='homepage_link'>Back to the <%= link_to "homepage", root_path %></p>
-  </div>
-  <div id='about'>
-    <p id='about_message'>Meetings are typically bi-weekly, on Fridays at 7 or 7:30pm. Never joined a book club before? Not to worry!<br>Come on down, we'd love to have you!</p>
-  </div>
-  <div id='read_books_grid'>
-    <p id='read_books_header'>Books We've Read</p>
-    <% @books.each do |book| %>
-      <%= image_tag(book.photo, id:'about_photo_of_book', alt:'book_photo') %>
-    <% end %>
-  </div>
-</html>
+<div id='navbar'>
+  <p id='welcome'> About The Mile High Bibliophiles </p>
+  <p id='homepage_link'>Back to the <%= link_to "homepage", root_path %></p>
+</div>
+<div id='about'>
+  <p id='about_message'>Meetings are typically bi-weekly, on Fridays at 7 or 7:30pm. Never joined a book club before? Not to worry!<br>Come on down, we'd love to have you!</p>
+</div>
+<div id='read_books_grid'>
+  <p id='read_books_header'>Books We've Read</p>
+  <% @books.each do |book| %>
+    <%= image_tag(book.photo, id:'about_photo_of_book', alt:'book_photo') %>
+  <% end %>
+</div>

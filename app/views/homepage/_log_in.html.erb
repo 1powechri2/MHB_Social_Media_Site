@@ -1,0 +1,13 @@
+<div id='log_in_modal'>
+  <div id='log_in_form'>
+    <p id='log_in_close'>&times;</p>
+    <p id='log_in_message'>ENTER YOUR USERNAME AND PASSWORD</p>
+    <%= form_tag(session_login_path) do %>
+      <%= label_tag(:username, 'User Name', id: 'label') %><br>
+      <%= text_field_tag(:username, "", class: 'field') %><br>
+      <%= label_tag(:password, 'Password', id: 'label') %><br>
+      <%= password_field_tag(:password, "", class: 'field') %><br>
+      <%= submit_tag("Log In Bibliophile!", class: 'submit_btn') %>
+    <% end %>
+  </div>
+</div>

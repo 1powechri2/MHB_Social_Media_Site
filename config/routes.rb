@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   resources :posts, only: [:destroy]
 
   get 'about', to: 'about#index'
+
+  get 'message_board', to: 'message_board#index'
 end

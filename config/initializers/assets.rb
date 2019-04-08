@@ -13,4 +13,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-Rails.application.config.assets.precompile += %w( root_page.js cable.js )
+Rails.application.config.assets.precompile += %w( root_page.js cable.js channels/message.js)

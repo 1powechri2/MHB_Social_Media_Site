@@ -1,0 +1,20 @@
+<div id='admin_events'>
+  <div id='new_event_admin'>
+    <%= form_for @event do |f| %>
+    <%= content_tag(:p, "Enter An Event") %>
+    <%= f.label(:message, 'Event Message', id: 'event_message_admin') %>
+    <%= f.text_field(:message, class: 'event_message_admin') %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+  <% if @events.empty? %>
+    <%= content_tag(:p, "There are no current events posted.") %>
+  <% else %>
+    <% @events.each do |event| %>
+      <%= form_for event, method: :delete do |f| %>
+        <%= content_tag(:p, "#{event.message}") %>
+        <%= f.submit("Delete Message") %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

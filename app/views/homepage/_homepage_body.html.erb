@@ -1,0 +1,30 @@
+<body id='homepage_body'>
+  <div id='current_books'>
+    <div id='books_header'>
+      <p id='mhb_books_board'>Current Book:</p>
+    </div>
+    <% @books.each do |book| %>
+      <%= content_tag(:p, "#{book.title}", id:'book_title') %>
+      <%= content_tag(:p, "By #{book.author}", id:'book_author') %>
+      <div id='book_photo'>
+        <%= image_tag(book.photo, id:'photo_of_book', alt:'book_photo') %>
+      </div>
+    <% end %>
+  </div>
+  <div id='upcoming_events'>
+    <div id='events_header'>
+      <p>Upcoming Events:</p>
+    </div>
+    <div id='upcomming_events_body'>
+      <div id='events_body'>
+        <% if @events.empty? %>
+          <%= content_tag(:p, "> There are no current events posted.") %>
+        <% else %>
+          <% @events.each do |event| %>
+            <%= content_tag(:p, "> #{event.message}") %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>

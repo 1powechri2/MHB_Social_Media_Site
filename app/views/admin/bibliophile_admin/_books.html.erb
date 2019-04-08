@@ -1,0 +1,39 @@
+<div id='books_admin'>
+  <div id='new_book_admin'>
+    <%= form_for @book, multipart: true do |f| %>
+      <%= content_tag(:p, "Enter A New Book") %>
+      <%= f.label(:title, 'Book Title', id: 'label_admin') %>
+      <%= f.text_field(:title, class: 'field_admin') %>
+      <%= f.label(:author, 'Book Author', id: 'label_admin') %>
+      <%= f.text_field(:author, class: 'field_admin') %>
+      <%= f.label(:description, 'Add a Description', id: 'label_admin') %><br>
+      <%= f.text_area(:description, class: 'field_admin') %><br>
+      <%= f.label(:photo, 'Add a Photo', id: 'label_admin') %>
+      <%= f.file_field(:photo, class: 'field_admin') %>
+      <%= f.select('status', Book.statuses.collect {|key, val| [key]}) %><br>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <p>Edit Previous Books</p>
+  <div id='all_mhb_books'>
+    <% @books.each do |book| %>
+      <%= form_for book, :html => { :multipart => true } do |f| %>
+      <%= f.label(:title, 'Book Title', id: 'label_admin') %>
+      <%= f.text_field(:title, id: 'field_admin') %><br>
+      <%= f.label(:author, 'Book Author', id: 'label_admin') %>
+      <%= f.text_field(:author, id: 'field_admin') %><br>
+      <%= f.label(:description, 'Add a Description', id: 'label_admin') %><br>
+      <%= f.text_area(:description, id: 'field_admin') %><br>
+      <%= content_tag(:p, "Current Photo") %>
+      <%= image_tag(book.photo, id:'photo_of_book', alt:'book_photo') %><br>
+      <%= f.label(:photo, 'Change Photo', id: 'label_admin') %><br>
+      <%= f.file_field(:photo, id: 'field_admin') %><br>
+      <%= f.select('status', Book.statuses.collect {|key, val| [key]}) %><br>
+      <%= f.submit %>
+      <% end %>
+      <%= form_for book, :html => {class: 'delete_book_admin'}, method: :delete do |f| %>
+        <%= f.submit('Delete Book') %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

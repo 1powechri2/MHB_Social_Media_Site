@@ -1,7 +1,7 @@
 class HomepageController < ApplicationController
   def index
     @user  = User.new
-    @books = Book.where(:status => 'reading')
-    @events = Event.all
+    @book = Book.where(:status => 'reading')
+    @books = Book.includes(photo_attachment: [:blob]).all
   end
 end

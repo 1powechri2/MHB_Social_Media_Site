@@ -1,9 +1,12 @@
 <body id='homepage_body'>
-  <div id='current_books'>
+  <div id='about'>
+    <p id='about_message'>Mile High Bibliophiles is a book club unlike other book clubs.  We are a book club of diversity, inclusivity and warmth.  We choose each book by vote - every member bringing their own pick and pitching it to the group.  We strive to move thoughtfully and slowly through each of our reads, so as to allow a full bloom of conversation to develop.  We are a group of friends and a community who value a little drink, a little food and a lot of fun and reading.</p>
+  </div>
+  <div id='current_book'>
     <div id='books_header'>
-      <p id='mhb_books_board'>Current Book:</p>
+      <p id='mhb_books_board'>Our Current Book is</p>
     </div>
-    <% @books.each do |book| %>
+    <% @book.each do |book| %>
       <%= content_tag(:p, "#{book.title}", id:'book_title') %>
       <%= content_tag(:p, "By #{book.author}", id:'book_author') %>
       <div id='book_photo'>
@@ -11,20 +14,13 @@
       </div>
     <% end %>
   </div>
-  <div id='upcoming_events'>
-    <div id='events_header'>
-      <p>Upcoming Events:</p>
-    </div>
-    <div id='upcomming_events_body'>
-      <div id='events_body'>
-        <% if @events.empty? %>
-          <%= content_tag(:p, "> There are no current events posted.") %>
-        <% else %>
-          <% @events.each do |event| %>
-            <%= content_tag(:p, "> #{event.message}") %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
+  <div id='about'>
+    <p id='about_message'>Meetings are typically bi-weekly, on Fridays at 7 or 7:30pm. Never joined a book club before? Not to worry!<br>Come on down, we'd love to have you!</p>
+  </div>
+  <div id='read_books_grid'>
+    <p id='read_books_header'>Books We've Read</p>
+    <% @books.each do |book| %>
+      <%= image_tag(book.photo, id:'about_photo_of_book', alt:'book_photo') %>
+    <% end %>
   </div>
 </body>

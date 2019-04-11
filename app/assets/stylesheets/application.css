@@ -100,7 +100,7 @@ table {
 
 	#about {
 		grid-column: 5 / span 1;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 		align-self: center;
 	  font-size: 2vw;
@@ -108,43 +108,42 @@ table {
 	}
 
 	#message-board {
-		grid-column: 6 / span 1;
-		font-family: 'Permanent Marker', cursive;
+		grid-column: 8 / span 1;
+		font-family: 'Nunito', sans-serif;
 		color: #07020D;
 		align-self: center;
+		justify-self: center;
 		font-size: 2vw;
 		text-decoration: none;
 	}
 
 	#sign_up {
-	  grid-column: 7 / span 1;
-	  font-family: 'Permanent Marker', cursive;
+	  grid-column: 6 / span 1;
+	  font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 	  font-size: 2vw;
-		padding-left: 3vw;
 		background-color: transparent;
 		border: none;
 	}
 
 	#log_in {
-	  grid-column: 8 / span 1;
-	  font-family: 'Permanent Marker', cursive;
+	  grid-column: 7 / span 1;
+	  font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 	  font-size: 2vw;
-		padding-left: 3vw;
 		background-color: transparent;
 		border: none;
 	}
 
 	.log_out {
-	  grid-column: 8 / span 1;
+	  grid-column: 7 / span 1;
 		background-color: transparent;
 		align-self: center;
 		padding-left: 2vw;
 	}
 
 	#log_out {
-	  font-family: 'Permanent Marker', cursive;
+	  font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 	  font-size: 2vw;
 		background-color: transparent;
@@ -152,14 +151,14 @@ table {
 	}
 
 	.admin_link {
-	  grid-column: 7 / span 1;
+	  grid-column: 6 / span 1;
 		background-color: transparent;
 		align-self: center;
 		padding-left: 2vw;
 	}
 
 	#admin_link {
-	  font-family: 'Permanent Marker', cursive;
+	  font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 	  font-size: 2vw;
 		background-color: transparent;
@@ -168,7 +167,7 @@ table {
 
 	#welcome {
 		grid-column: 1 / span 3;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 	  font-size: 2vw;
 		padding-left: 1vw;
@@ -177,7 +176,7 @@ table {
 
 	#flash1 {
 		grid-column: 1 / span 5;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		color: #CAD593;
 		font-size: 2vw;
 		padding-left: 1vw;
@@ -186,7 +185,7 @@ table {
 
 	#flash2 {
 		grid-column: 1 / span 4;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		color: #CAD593;
 		font-size: 2vw;
 		padding-left: 1vw;
@@ -302,92 +301,7 @@ table {
 		background-attachment: fixed;
 	}
 
-	#message_grid {
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		margin-left: 10px;
-		margin-right: 10PX;
-		margin-top: 10px;
-	}
-
-	#message_header {
-		grid-column: 6 / span 7;
-		grid-row: 1 / span 1;
-		background-color: black;
-		color: #DED9D2;
-		font-family: 'Permanent Marker', cursive;
-	}
-
-	#mhb_message_board {
-		font-family: 'Permanent Marker', cursive;
-		padding-left: 2vw;
-		padding-top: 3px;
-		font-size:4vh;
-	}
-
-	#message_board {
-		grid-column: 6 / span 7;
-		grid-row: 2 / span 6;
-		overflow: scroll;
-		background-color: white;
-		padding-bottom: 2vh;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-		grid-gap: 1vh;
-		border-bottom: 4px solid black;
-		border-left: 8px solid black;
-		border-right: 8px solid black;
-		background-image: url(/assets/paper.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
-		height: 450px;
-	}
-
-	#message_photo {
-		grid-column: 1 / 2;
-		padding-left: 2vh;
-	}
-
-	#message_text {
-		grid-column: 2 / 12;
-	}
-
-	#message_name {
-		font-family: 'Poppins', sans-serif;
-		font-size: 120%;
-	}
-
-	#message_date {
-		font-family: 'Ubuntu', sans-serif;
-		color: #898A8C;
-		padding-left: 5px;
-	}
-
-	#post_message {
-		font-family: 'Poppins:200', sans-serif;
-		border: 2px solid #00ff00;
-		padding-left: 15px;
-		padding-top: 3px;
-		padding-bottom: 7px;
-		width: 70%;
-	}
-
-	#new_post {
-		grid-column: 6 / span 7;
-		grid-row: 8;
-		padding-top: 10px;
-	}
-
-	#current_books {
-		grid-column: 1 / span 5;
-		grid-row: 1 / span 4;
-		background-color: white;
-		margin-left: 20%;
-		margin-right: 20%;
-		margin-bottom: 5%;
-		background-image: url(/assets/paper.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
+	#current_book {
 	}
 
 	#books_header {
@@ -395,13 +309,14 @@ table {
 		justify-content: center;
 		color: Black;
 		font-family: 'Poppins', sans-serif;
-		font-size: 175%;
+		font-size: 300%;
+		margin-top: 20px;
 	}
 
 	#book_title {
 		display: flex;
 		justify-content: center;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		font-size: 3vh;
 		padding-top: 1vh;
 		padding-bottom: 1vh;
@@ -410,7 +325,7 @@ table {
 	#book_author {
 		display: flex;
 		justify-content: center;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		font-size: 3vh;
 		padding-bottom: 1vh;
 	}
@@ -421,8 +336,8 @@ table {
 	}
 
 	#photo_of_book {
-		height: 15vw;
-		width: 10vw;
+		height: 800px;
+		width: 600px;
 		padding-bottom: 2vw;
 	}
 
@@ -458,121 +373,122 @@ table {
 @media (max-width: 1000px) {
 	#header {
 		background-color: black;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  width: 100%;
-	  height: 100px;
-	  position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		position: relative;
 	}
 
 	#header_color {
-	  background-color: transparent;
-	  opacity: 1;
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
+		background-color: transparent;
+		opacity: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 
 	#header_mhb {
-	  font-family: 'Shrikhand', cursive;
-	  font-size: 8vw;
-	  color: #e8192a;
-	  position: absolute;
+		font-family: 'Shrikhand', cursive;
+		font-size: 7vw;
+		color: #e8192a;
+		position: absolute;
 		text-shadow: 0px 0px 10px #C21120;
 	}
 
 	#navbar {
-	  width: 100;
-	  height: 50px;
-	  display: grid;
+		width: 100;
+		height: 50px;
+		display: grid;
 		background: linear-gradient(to left, #0161FA, #99C715);
-	  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	  grid-template-rows: 50px;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 50px;
 	}
 
 	#about {
-		grid-column: 6 / span 1;
-		font-family: 'Permanent Marker', cursive;
-	  color: #07020D;
-		align-self: center;
-	  font-size: 2vw;
-		text-decoration: none;
-	}
-
-	#message-board {
-		grid-column: 6 / span 1;
-		font-family: 'Permanent Marker', cursive;
+		grid-column: 5 / span 1;
+		font-family: 'Nunito', sans-serif;
 		color: #07020D;
 		align-self: center;
 		font-size: 2vw;
 		text-decoration: none;
 	}
 
+	#message-board {
+		grid-column: 8 / span 1;
+		font-family: 'Nunito', sans-serif;
+		color: #07020D;
+		align-self: center;
+		justify-self: center;
+		font-size: 2vw;
+		text-decoration: none;
+	}
+
 	#sign_up {
-	  grid-column: 7 / span 1;
-	  font-family: 'Permanent Marker', cursive;
-	  color: #07020D;
-	  font-size: 2vw;
-		padding-left: 3vw;
+		grid-column: 6 / span 1;
+		font-family: 'Nunito', sans-serif;
+		color: #07020D;
+		font-size: 2vw;
 		background-color: transparent;
 		border: none;
 	}
 
 	#log_in {
-	  grid-column: 8 / span 1;
-	  font-family: 'Permanent Marker', cursive;
-	  color: #07020D;
-	  font-size: 2vw;
-		padding-left: 3vw;
+		grid-column: 7 / span 1;
+		font-family: 'Nunito', sans-serif;
+		color: #07020D;
+		font-size: 2vw;
 		background-color: transparent;
 		border: none;
 	}
 
 	.log_out {
-	  grid-column: 8 / span 1;
+		grid-column: 7 / span 1;
 		background-color: transparent;
 		align-self: center;
 		padding-left: 2vw;
 	}
 
 	#log_out {
-	  font-family: 'Permanent Marker', cursive;
-	  color: #07020D;
-	  font-size: 2vw;
+		font-family: 'Nunito', sans-serif;
+		color: #07020D;
+		font-size: 2vw;
 		background-color: transparent;
 		border: none;
 	}
 
 	.admin_link {
-	  grid-column: 7 / span 1;
+		grid-column: 6 / span 1;
 		background-color: transparent;
 		align-self: center;
 		padding-left: 2vw;
 	}
 
 	#admin_link {
-	  font-family: 'Permanent Marker', cursive;
-	  color: #07020D;
-	  font-size: 2vw;
+		font-family: 'Nunito', sans-serif;
+		color: #07020D;
+		font-size: 2vw;
 		background-color: transparent;
 		border: none;
 	}
 
 	#welcome {
 		grid-column: 1 / span 3;
-		font-family: 'Permanent Marker', cursive;
-	  color: #07020D;
-	  font-size: 2vw;
+		font-family: 'Nunito', sans-serif;
+		color: #07020D;
+		font-size: 2vw;
 		padding-left: 1vw;
 		align-self: center;
 	}
 
 	#flash1 {
 		grid-column: 1 / span 5;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		color: #CAD593;
 		font-size: 2vw;
 		padding-left: 1vw;
@@ -581,7 +497,7 @@ table {
 
 	#flash2 {
 		grid-column: 1 / span 4;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		color: #CAD593;
 		font-size: 2vw;
 		padding-left: 1vw;
@@ -590,14 +506,14 @@ table {
 
 	#sign_up_modal {
 		display: flex;
-	  justify-content: center;
+		justify-content: center;
 		align-items: center;
 		position: fixed;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  z-index: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
 		background: rgba(135, 163, 48, 0.2);
 		text-align: center;
 	}
@@ -632,13 +548,13 @@ table {
 
 	#log_in_modal {
 		display: flex;
-	  justify-content: center;
+		justify-content: center;
 		position: fixed;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  z-index: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
 		background: rgba(135, 163, 48, 0.2);
 		text-align: center;
 	}
@@ -683,7 +599,7 @@ table {
 	.submit_btn {
 		width: 20vw;
 		margin-top: 10px;
-		height: 6vw;
+		height: 2vw;
 		border-radius: 50px;
 		font-family: 'Libre Baskerville', serif;
 		font-size: 1vw;
@@ -697,93 +613,7 @@ table {
 		background-attachment: fixed;
 	}
 
-	#message_grid {
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		margin-left: 10px;
-		margin-right: 10PX;
-		margin-top: 10px;
-	}
-
-	#message_header {
-		grid-column: 6 / span 7;
-		grid-row: 1 / span 1;
-		background-color: black;
-		color: #DED9D2;
-		font-family: 'Permanent Marker', cursive;
-		font-size: 5vh;
-	}
-
-	#mhb_message_board {
-		font-family: 'Permanent Marker', cursive;
-		padding-left: 2vw;
-		padding-top: 3px;
-		font-size:4vh;
-	}
-
-	#message_board {
-		grid-column: 6 / span 7;
-		grid-row: 2 / span 8;
-		overflow: scroll;
-		background-color: white;
-		padding-bottom: 2vh;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-		grid-gap: 1vh;
-		border-bottom: 4px solid black;
-		border-left: 8px solid black;
-		border-right: 8px solid black;
-		background-image: url(/assets/paper.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
-		height: 450px;
-	}
-
-	#message_photo {
-		grid-column: 1 / 2;
-		padding-left: 2vh;
-	}
-
-	#message_text {
-		grid-column: 2 / 12;
-	}
-
-	#message_name {
-		font-family: 'Poppins', sans-serif;
-		font-size: 120%;
-	}
-
-	#message_date {
-		font-family: 'Ubuntu', sans-serif;
-		color: #898A8C;
-		padding-left: 5px;
-	}
-
-	#post_message {
-		font-family: 'Poppins:200', sans-serif;
-		border: 2px solid #00ff00;
-		padding-left: 15px;
-		padding-top: 3px;
-		padding-bottom: 7px;
-		width: 70%;
-	}
-
-	#new_post {
-		grid-column: 6 / span 7;
-		grid-row: 10 / span 2;
-		padding-top: 1vh;
-	}
-
-	#current_books {
-		grid-column: 1 / span 5;
-		grid-row: 1 / span 5;
-		background-color: white;
-		margin-left: 20%;
-		margin-right: 20%;
-		margin-bottom: 5%;
-		background-image: url(/assets/paper.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
+	#current_book {
 	}
 
 	#books_header {
@@ -791,13 +621,14 @@ table {
 		justify-content: center;
 		color: Black;
 		font-family: 'Poppins', sans-serif;
-		font-size: 175%;
+		font-size: 300%;
+		margin-top: 20px;
 	}
 
 	#book_title {
 		display: flex;
 		justify-content: center;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		font-size: 3vh;
 		padding-top: 1vh;
 		padding-bottom: 1vh;
@@ -806,7 +637,7 @@ table {
 	#book_author {
 		display: flex;
 		justify-content: center;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		font-size: 3vh;
 		padding-bottom: 1vh;
 	}
@@ -817,14 +648,14 @@ table {
 	}
 
 	#photo_of_book {
-		height: 15vw;
-		width: 10vw;
+		height: 800px;
+		width: 600px;
 		padding-bottom: 2vw;
 	}
 
 	#upcoming_events {
 		grid-column: 1 / span 5;
-		grid-row: 6 / span 4;
+		grid-row: 5 / span 4;
 		margin-right: 2%;
 		background-color: white;
 		background-image: url(/assets/paper.jpg);
@@ -841,7 +672,7 @@ table {
 	}
 
 	#upcomming_events_body {
-		height: 25vw;
+		height: 12vw;
 		overflow: scroll;
 	}
 
@@ -889,8 +720,8 @@ table {
 	}
 
 	#about {
-		grid-column: 6 / span 1;
-		font-family: 'Permanent Marker', cursive;
+		grid-column: 5 / span 1;
+		font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 		align-self: center;
 	  font-size: 2vw;
@@ -898,17 +729,18 @@ table {
 	}
 
 	#message-board {
-		grid-column: 6 / span 1;
-		font-family: 'Permanent Marker', cursive;
+		grid-column: 8 / span 1;
+		font-family: 'Nunito', sans-serif;
 		color: #07020D;
 		align-self: center;
+		justify-self: center;
 		font-size: 2vw;
 		text-decoration: none;
 	}
 
 	#sign_up {
-	  grid-column: 7 / span 1;
-	  font-family: 'Permanent Marker', cursive;
+	  grid-column: 6 / span 1;
+	  font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 	  font-size: 2vw;
 		padding-left: 3vw;
@@ -917,24 +749,23 @@ table {
 	}
 
 	#log_in {
-	  grid-column: 8 / span 1;
-	  font-family: 'Permanent Marker', cursive;
+	  grid-column: 7 / span 1;
+	  font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 	  font-size: 2vw;
-		padding-left: 3vw;
 		background-color: transparent;
 		border: none;
 	}
 
 	.log_out {
-	  grid-column: 8 / span 1;
+	  grid-column: 7 / span 1;
 		background-color: transparent;
 		align-self: center;
 		padding-left: 2vw;
 	}
 
 	#log_out {
-	  font-family: 'Permanent Marker', cursive;
+	  font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 	  font-size: 2vw;
 		background-color: transparent;
@@ -942,14 +773,14 @@ table {
 	}
 
 	.admin_link {
-	  grid-column: 7 / span 1;
+	  grid-column: 6 / span 1;
 		background-color: transparent;
 		align-self: center;
 		padding-left: 2vw;
 	}
 
 	#admin_link {
-	  font-family: 'Permanent Marker', cursive;
+	  font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 	  font-size: 2vw;
 		background-color: transparent;
@@ -958,7 +789,7 @@ table {
 
 	#welcome {
 		grid-column: 1 / span 3;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 	  color: #07020D;
 	  font-size: 2vw;
 		padding-left: 1vw;
@@ -967,7 +798,7 @@ table {
 
 	#flash1 {
 		grid-column: 1 / span 5;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		color: #CAD593;
 		font-size: 2vw;
 		padding-left: 1vw;
@@ -976,7 +807,7 @@ table {
 
 	#flash2 {
 		grid-column: 1 / span 4;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		color: #CAD593;
 		font-size: 2vw;
 		padding-left: 1vw;
@@ -1104,12 +935,12 @@ table {
 		grid-row: 1;
 		background-color: black;
 		color: #DED9D2;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		font-size: 5vh;
 	}
 
 	#mhb_message_board {
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		padding-left: 2vw;
 		padding-top: 3px;
 		font-size:4vh;
@@ -1174,16 +1005,8 @@ table {
 		padding-top: 1vh;
 	}
 
-	#current_books {
-		grid-column: 1 / span 12;
-		grid-row: 6;
-		background-color: white;
-		margin-left: 5px;
-		margin-right: 5px;
-		margin-bottom: 5%;
-		background-image: url(/assets/paper.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
+	#current_book {
+		grid-template-columns: 1fr 1fr;
 	}
 
 	#books_header {
@@ -1197,7 +1020,7 @@ table {
 	#book_title {
 		display: flex;
 		justify-content: center;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		font-size: 3vh;
 		padding-top: 1vh;
 		padding-bottom: 1vh;
@@ -1206,7 +1029,7 @@ table {
 	#book_author {
 		display: flex;
 		justify-content: center;
-		font-family: 'Permanent Marker', cursive;
+		font-family: 'Nunito', sans-serif;
 		font-size: 3vh;
 		padding-bottom: 1vh;
 	}

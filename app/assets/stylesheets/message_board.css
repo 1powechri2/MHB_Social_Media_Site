@@ -62,14 +62,18 @@
 #post_message {
   font-family: 'Poppins:200', sans-serif;
   border: 2px solid #00ff00;
-  padding-left: 15px;
-  padding-top: 3px;
-  padding-bottom: 7px;
-  width: 70%;
+  padding-left: 5px;
+  padding-bottom: 50px;
+  width: 90%;
 }
 
 #new_post {
   grid-column: 6 / span 7;
   grid-row: 8;
   padding-top: 10px;
+}
+
+#add_message_btn {
+  margin-bottom: 5px;
+
 }

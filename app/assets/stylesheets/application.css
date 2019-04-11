@@ -349,7 +349,7 @@ table {
 
 	#upcoming_events {
 		grid-column: 1 / span 5;
-		grid-row: 5 / span 4;
+		grid-row: 1 / span 7;
 		margin-right: 2%;
 		background-color: white;
 		background-image: url(/assets/paper.jpg);
@@ -667,7 +667,7 @@ table {
 
 	#upcoming_events {
 		grid-column: 1 / span 5;
-		grid-row: 5 / span 4;
+		grid-row: 1 / span 7;
 		margin-right: 2%;
 		background-color: white;
 		background-image: url(/assets/paper.jpg);

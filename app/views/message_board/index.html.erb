@@ -2,23 +2,23 @@
   <p id='welcome'>THIS IS THE MHB MESSAGE BOARD</p>
   <p id='homepage_link'>Back to the <%= link_to "homepage", root_path %></p>
 </div>
-<div id='upcoming_events'>
-  <div id='events_header'>
-    <p>Upcoming Events:</p>
-  </div>
-  <div id='upcomming_events_body'>
-    <div id='events_body'>
-      <% if @events.empty? %>
+<div id='message_grid'>
+  <div id='upcoming_events'>
+    <div id='events_header'>
+      <p>Upcoming Events:</p>
+    </div>
+    <div id='upcomming_events_body'>
+      <div id='events_body'>
+        <% if @events.empty? %>
         <%= content_tag(:p, "> There are no current events posted.") %>
-      <% else %>
+        <% else %>
         <% @events.each do |event| %>
-          <%= content_tag(:p, "> #{event.message}") %>
+        <%= content_tag(:p, "> #{event.message}") %>
         <% end %>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-<div id='message_grid'>
   <div id='message_header'>
     <p id='mhb_message_board'>MHB POSTS</p>
   </div>
@@ -35,7 +35,7 @@
   <% if current_user %>
     <%= form_for @post, url: '#' do |f| %>
       <%= f.submit 'Add Message', id: 'add_message_btn' %>
-      <%= f.text_field :message %>
+      <%= f.text_area :message %>
     <% end %>
   <% end %>
 </div>

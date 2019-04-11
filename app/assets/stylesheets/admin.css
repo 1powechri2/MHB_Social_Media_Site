@@ -19,6 +19,11 @@
 	border-bottom: 1px solid Black;
 }
 
+.event_message_admin {
+	padding: 100px 0px 0px 0px;
+	width: 90%;
+}
+
 .edit_event {
 	border-top: 1px solid Black;
 }
@@ -29,4 +34,10 @@
 
 #current_books {
 	overflow: scroll;
+}
+
+#admin_photo_of_book {
+	height: 400px;
+	width: 300px;
+	padding-bottom: 2vw;
 }

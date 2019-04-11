@@ -1,40 +1,36 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8' />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Mile High Bibliophiles</title>
-    <link href="https://fonts.googleapis.com/css?family=Shrikhand|Libre+Baskerville|Permanent+Marker|Poppins:500|Ubuntu:300|Averia+Serif+Libre" rel="stylesheet">
-  </head>
-  <div id='navbar'>
-    <p id='welcome'> Welcome <%= @user.first_name %> <%= @user.last_name %></p>
-    <p id='homepage_link'>Back to the <%= link_to "homepage", root_path %></p>
-    <%= button_to 'Log Out', session_logout_path, method: 'delete', form_class: 'log_out', id: 'log_out'%>
-  </div>
-  <body id='profile_body'>
-    <header id=profile_header>
-      HERE YOU CAN EDIT YOUR INFORMATION
-    </header>
-    <%= form_for @user, :html => { :multipart => true } do |f| %>
-    <div id='profile_information'>
+<div id='navbar'>
+  <% if current_user %>
+  <p id='welcome'> Welcome <%= current_user.first_name %> <%= current_user.last_name %></p>
+  <p id='homepage_link'>Back to the <%= link_to "homepage", root_path %> or <%= link_to "Discussion", message_board_path %></p>
+  <% else %>
+  <p id='welcome'>Welcome, Go to the <%= link_to "homepage", root_path %> to sign in or sign up!</p>
+  <% end %>
+</div>
+<body id='profile_body'>
+  <header id=profile_header>
+    HERE YOU CAN EDIT YOUR INFORMATION
+  </header>
+  <%= form_for @user, :html => { :multipart => true } do |f| %>
+  <div id='profile_information'>
+    <div id='profile_photo_div'>
       <%= image_tag(@user.photo, id:'profile_photo', alt:'profile_photo') %>
-      <div id='user_text'>
-        User Name: <%= f.text_field :username %><br>
-        Email: <%= f.email_field :email  %><br>
-        Bio: <%= f.text_area :bio %><br>
-        Pic: <%= f.file_field(:photo, class: 'field') %><br>
-        <%= f.submit("Update You Profile", class: 'submit_btn') %>
-      </div>
-    <% end %>
-    <div id='user_messages'>
-      <p id='user_messages_header'>Here Are Your Last 20 Posts:</p>
-      <% @user.last_twenty_posts.each do |post| %>
-      <%= form_for post, method: :delete do |f| %>
-      <%= content_tag(:p, "#{post.message}") %>
-      <%= f.submit("Delete Message") %>
-      <% end %>
-      <% end %>
     </div>
+    <div id='user_text'>
+      User Name: <%= f.text_field :username %><br>
+      Email: <%= f.email_field :email  %><br>
+      Bio: <%= f.text_area :bio %><br>
+      Pic: <%= f.file_field(:photo, class: 'field') %><br>
+      <%= f.submit("Update You Profile", class: 'submit_btn') %>
+    </div>
+  <% end %>
+  <div id='user_messages'>
+    <p id='user_messages_header'>Here Are Your Last 20 Posts:</p>
+    <% @user.last_twenty_posts.each do |post| %>
+    <%= form_for post, method: :delete do |f| %>
+    <%= content_tag(:p, "#{post.message}") %>
+    <%= f.submit("Delete Message") %>
+    <% end %>
+    <% end %>
   </div>
-  </body>
-</html>
+</div>
+</body>

@@ -25,7 +25,7 @@
       <%= f.label(:description, 'Add a Description', id: 'label_admin') %><br>
       <%= f.text_area(:description, id: 'field_admin') %><br>
       <%= content_tag(:p, "Current Photo") %>
-      <%= image_tag(book.photo, id:'photo_of_book', alt:'book_photo') %><br>
+      <%= image_tag(book.photo, id:'admin_photo_of_book', alt:'book_photo') %><br>
       <%= f.label(:photo, 'Change Photo', id: 'label_admin') %><br>
       <%= f.file_field(:photo, id: 'field_admin') %><br>
       <%= f.select('status', Book.statuses.collect {|key, val| [key]}) %><br>
